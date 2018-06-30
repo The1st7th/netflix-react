@@ -1,4 +1,5 @@
 import React from 'react';
+import Mid from './mid';
 
 function Maintop(){
   
@@ -39,6 +40,7 @@ function Maintop(){
     <button type ="button" className="btn btn-danger" >Movie List</button>
   </div>
       </div>
+      <Mid/>
       </div>
     );
   }
