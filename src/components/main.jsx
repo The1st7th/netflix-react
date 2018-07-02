@@ -1,5 +1,6 @@
 import React from 'react';
 import Mid from './mid';
+import { Link } from 'react-router-dom';
 
 function Maintop(){
   
