@@ -1,6 +1,7 @@
 import React from 'react';
 import {FormGroup, FormControl} from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function NewMovie(props){
     let _title = "";
@@ -9,10 +10,11 @@ function NewMovie(props){
 
     function onSubmit(e){
         e.preventDefault();
-        console.log(_title);
-        console.log(_overview);
-        console.log(_poster);
-        props.movieadd({title: _title, overview:_overview, poster:_poster});
+        // console.log(_title);
+        // console.log(_overview);
+        // console.log(_poster);
+        props.movieadd({title: _title, overview:_overview, poster:_poster,id: v4()});
+  
     }
 
     return (

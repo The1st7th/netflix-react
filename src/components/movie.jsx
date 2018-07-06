@@ -8,7 +8,7 @@ function Movie(props){
               <div className="row">
               <div className="col-md-3">
               {/* <div className="card" style={"width: 18rem;"}> */}
-              <img className="card-img-top" src="kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt={props.poster}/>
+              <img className="card-img-top" src={props.poster} alt="image"/>
               <div className="card-body">
               <h5 className="card-title">{props.title}</h5>
               <p className="card-text">{props.overview}</p>
@@ -23,7 +23,7 @@ function Movie(props){
 }
 Movie.propTypes = {
     title: PropTypes.string.isRequired,
-    rating: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
     poster: PropTypes.string
   };
 export default Movie;

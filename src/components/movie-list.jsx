@@ -1,7 +1,8 @@
 import React from 'react';
 import Movie from './movie';
+import PropTypes from 'prop-types';
 
-function Movielist(){
+function Movielist(props){
 // var movies =[
 //     {
 //     title: "batman",
@@ -19,12 +20,12 @@ function Movielist(){
 //     poster: "example"
 // }]
 var obj=[];
-for(var x = 0;x < 3;x++)
+for(var x = 0;x < props.Movielist.length;x++)
 {
-  var temp = <Movie title={movies[x].title}
-  rating={movies[x].rating}
-  poster={movies[x].poster}
-  key={x}/>
+  var temp = <Movie title={props.Movielist[x].title}
+  overview={props.Movielist[x].overview}
+  poster={props.Movielist[x].poster}
+  key = {props.Movielist[x].id}/>
 
   obj.push(temp);
 }

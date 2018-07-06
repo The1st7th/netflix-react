@@ -11,12 +11,13 @@ class App extends React.Component {
       this.state={
         Movielist:[]
       }
-      this.addmovie = thisaddmovie.bind(this);
+      this.addmovie = this.addmovie.bind(this);
     }
     addmovie(newMovie){
+      
       let newMovielist = this.state.Movielist.slice();
       newMovielist.push(newMovie);
-      this.setState({Movielist:newMovielist});
+      this.setState({Movielist:newMovielist},()=>{console.log(this.state.Movielist);});
     }
 
     render(){
