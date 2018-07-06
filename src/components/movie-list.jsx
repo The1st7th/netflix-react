@@ -2,22 +2,22 @@ import React from 'react';
 import Movie from './movie';
 
 function Movielist(){
-var movies =[
-    {
-    title: "batman",
-    rating: "8",
-    poster: "example"
-},
-{
-    title: "batman",
-    rating: "8",
-    poster: "example"
-},
-{
-    title: "batman",
-    rating: "8",
-    poster: "example"
-}]
+// var movies =[
+//     {
+//     title: "batman",
+//     rating: "8",
+//     poster: "example"
+// },
+// {
+//     title: "batman",
+//     rating: "8",
+//     poster: "example"
+// },
+// {
+//     title: "batman",
+//     rating: "8",
+//     poster: "example"
+// }]
 var obj=[];
 for(var x = 0;x < 3;x++)
 {
@@ -36,4 +36,8 @@ return (
 
 );
 }
+Movielist.propTypes = {
+    Movielist: PropTypes.array,
+  };
+
 export default Movielist;
