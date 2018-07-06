@@ -14,14 +14,14 @@ function NewMovie(props){
         // console.log(_overview);
         // console.log(_poster);
         props.movieadd({title: _title, overview:_overview, poster:_poster,id: v4()});
-  
-    }
+        document.getElementById("reset").reset();
+        }
 
     return (
         <div>
-        <form>
+        <form id ="reset">
   <FormGroup >
-    <FormControl type="text" placeholder="title" onChange={(e)=>{_title=e.target.value}} />
+    <FormControl type="text" id="title" placeholder="title" onChange={(e)=>{_title=e.target.value}} />
   </FormGroup>
   <FormGroup>
     <FormControl type="text" placeholder="overview" onChange={(e)=>{_overview=e.target.value}} />
