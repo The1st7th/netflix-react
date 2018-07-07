@@ -23,18 +23,16 @@ class App extends React.Component {
 
     deletemovie(id){
       
-      var newMovies=[];
+      
     
       let newMovielist = this.state.Movielist.slice();
       console.log(newMovielist);
       for (var x = 0; x < newMovielist.length ;x++){
         if ( id ==  newMovielist[x].id){
-         newMovies = newMovielist.splice(x,1);
-         console.log("hello");
-          console.log(newMovies);
+         newMovielist.splice(x,1);
         }
       }
-      this.setState({Movielist:newMovies});
+      this.setState({Movielist:newMovielist});
     }
 
     render(){
