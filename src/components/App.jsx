@@ -12,12 +12,29 @@ class App extends React.Component {
         Movielist:[]
       }
       this.addmovie = this.addmovie.bind(this);
+      this.deletemovie =this.deletemovie.bind(this);
     }
     addmovie(newMovie){
-      
+      console.log(newMovie);
       let newMovielist = this.state.Movielist.slice();
       newMovielist.push(newMovie);
       this.setState({Movielist:newMovielist},()=>{console.log(this.state.Movielist);});
+    }
+
+    deletemovie(id){
+      
+      var newMovies=[];
+    
+      let newMovielist = this.state.Movielist.slice();
+      console.log(newMovielist);
+      for (var x = 0; x < newMovielist.length ;x++){
+        if ( id ==  newMovielist[x].id){
+         newMovies = newMovielist.splice(x,1);
+         console.log("hello");
+          console.log(newMovies);
+        }
+      }
+      this.setState({Movielist:newMovies});
     }
 
     render(){
@@ -25,7 +42,7 @@ class App extends React.Component {
       <div>
         <Switch>
           <Route exact path='/' component={Main} />
-          <Route path='/movies' render={()=><Movielist Movielist={this.state.Movielist} />} />
+          <Route path='/movies' render={()=><Movielist Movielist={this.state.Movielist} moviedelete={this.deletemovie}  />} />
           <Route path='/newmovie' render={()=><NewMovie movieadd={this.addmovie} />} />
           <Route component={Error404} />
         </Switch>

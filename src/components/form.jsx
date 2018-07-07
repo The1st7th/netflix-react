@@ -2,6 +2,7 @@ import React from 'react';
 import {FormGroup, FormControl} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 function NewMovie(props){
     let _title = "";
@@ -13,7 +14,7 @@ function NewMovie(props){
         // console.log(_title);
         // console.log(_overview);
         // console.log(_poster);
-        props.movieadd({title: _title, overview:_overview, poster:_poster,id: v4()});
+        props.movieadd({title: _title, overview:_overview, poster:_poster, id: v4()});
         document.getElementById("reset").reset();
         }
 
@@ -32,6 +33,11 @@ function NewMovie(props){
 
   <button onClick ={(e) =>onSubmit(e)}>submit</button>
 </form>
+<Link to ='/movies'>
+    <div className ="newmovies">
+    <button type ="button" className="btn btn-danger" >Movie List</button>
+  </div>
+  </Link>
 </div>
     );
 }
